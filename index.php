@@ -6,6 +6,7 @@ $questionsandanswers[1] = 1;
 $questionsandanswers[2] = 1;
 $questionsandanswers[3] = 0;
 $questionsandanswers[4] = 1;
+$questionsandanswers[5] = 1;
 $marker = "";
 $here = "";
 $whatif = "?q=".str_replace("/submit","",$getvar)."/whatif";
@@ -104,7 +105,7 @@ $questionend = "</div>
 if (strpos($here, 'whatif')) {
 	$review = "?q=".substr($getvar,0,1)."/submit&rev=1";
 	
-	if (substr($getvar,0,1) == 4) {$next = "?q=thankyou";}
+	if (substr($getvar,0,1) == 5) {$next = "?q=thankyou";}
 	else {$next = "?q=".(substr($getvar,0,1)+1);}
 
 	$marker = "<div class='row'>
@@ -130,7 +131,7 @@ $disabled = "";
 if($_GET['rev']) {
 	$disabled = 'disabled';
 	$next = "?q=".(substr($getvar,0,1)+1);
-	if ($here == "4/submit") {$next="?q=thankyou";}
+	if ($here == "5/submit") {$next="?q=thankyou";}
 }
 
 if (strpos($here, 'submit') && !$_GET['rev']) {
@@ -139,7 +140,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 	$disabled = 'disabled';
 	//if we're at a submit page, make the form move to the next question
 	if ($here == "1/submit") {$next="?q=train/intro";}
-	if ($here == "4/submit") {$next="?q=thankyou";}
+	if ($here == "5/submit") {$next="?q=thankyou";}
 	else {
 		$next = "?q=".(intval($_POST['question'])+1);
 		}
@@ -237,18 +238,18 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 
 
   <?php if ($getvar == "thankyou"): ?>
-    <div id="GoldenFish">
+    <!--<div id="GoldenFish">
       <img src="resources/kpani_to12246_59408070.gif" alt="Smiley Fish Swiming" height="156" width="182">
-    </div>
+    </div>-->
 
     <script type="text/javascript">
-      var windowWidth = $( window ).width() + 160;
-      var windowHeight = $( window ).height() + 160;
-      $( "#GoldenFish" ).animate({
-        left: "+=" + windowWidth.toString(),
-      }, 13000, function() {
+      //var windowWidth = $( window ).width() + 160;
+      //var windowHeight = $( window ).height() + 160;
+      //$( "#GoldenFish" ).animate({
+        //left: "+=" + windowWidth.toString(),
+      //}, 13000, function() {
         // Animation complete.
-      });
+      //});
     </script>
     
   <?php endif; ?>
@@ -363,7 +364,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <br><span id="subject" tabindex="0" aria-describedby="tip2" class="LinkAnchor DoNotOpen"><strong>Subject:</strong>  Update To Your Secure Account</span><span id="tip2" class="tip hidden"><strong>Clue:</strong> U-M will never ask you to update or validate your account to secure it.<br>You keep your U-M account as long as you are affiliated with the university.</span></p>
 
 <p style="color: #cd232c;margin-bottom:0px;" id="gbs" tabindex="0" aria-describedby="tip3" class="LinkAnchor DoNotOpen">Your mailbox is almost full and out dated.</p>
-<span id="tip3" class="tip hidden" style="margin-top:10px;"><strong>Clue:</strong> M+Google mailboxes have unlimited storage, so your mailbox cannot become full.</span>
+<span id="tip3" class="tip hidden" style="margin-top:10px;"><strong>Clue:</strong> <nobr>U-M</nobr> Google mailboxes have unlimited storage, so your mailbox cannot become full.</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
@@ -424,7 +425,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "2" || $here == "2/submit") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 1 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 1 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
@@ -467,7 +468,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "2/whatif") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 1 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 1 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
@@ -491,7 +492,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "3" || $here == "3/submit") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 2 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 2 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
@@ -549,7 +550,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "3/whatif") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 2 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 2 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
@@ -578,7 +579,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "4" || $here == "4/submit") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 3 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 3 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
@@ -629,13 +630,84 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
 <?php elseif($here == "4/whatif") : ?>
 <div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
           
-          <h1>Email 3 of 3<?php echo $subtext; ?></h1>
+          <h1>Email 3 of 4<?php echo $subtext; ?></h1>
   
 <?php 
  	echo $marker;
 ?>  
 <p>If you clicked the link in the email, you would be taken to the page shown here. If you logged in, your password would be stolen, and your U-M account could be compromised.</p>
         <img src="/main/phishing_alerts/images/2016-03-30-1.jpg" alt="Enter your email and password." class="img-responsive center-block">
+        
+        
+        
+        
+        
+        
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php elseif($here == "5" || $here == "5/submit") : ?>
+<div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
+          
+          <h1>Email 4 of 4<?php echo $subtext; ?></h1>
+  
+<?php 
+ 	echo $marker;
+?>  
+            
+        
+          <div style="margin-bottom:19px">
+
+ 			
+            <?php if (strpos($here, 'submit')) {echo $mousetext;} ?>
+<p><span id="from4" aria-describedby="4tip1" tabindex="0" class="LinkAnchor DoNotOpen"><strong>From:</strong> UMHS &lt;<a href="mailto:info@med.umich.edu"aria-describedby="tip1" id="5link1" class="LinkAnchor DoNotOpen">info@med.umich.edu</a><span id="tip1" class="tip"><strong>Clue:</strong> This is not a valid UMHS address. This is not a valid UMHS address. UMHS Outlook/Exchange users can check addresses in the Global Address List by typing the address in the address bar in Outlook.</span>&gt;
+</span>
+
+
+<br />
+<span id="staffportal" aria-describedby="5tip2" tabindex="0" class="LinkAnchor DoNotOpen"><strong>Subject:</strong> Message from staff portal</span><span id="5tip2" class="tip"><strong>Clue:</strong> The Health System does not have anything called "staff portal." You can search UMHS websites to check the accuracy of service and other names.</span></p>
+            
+
+            <div class="center-block" style="position:relative;background:#fff;padding:1em;">
+<p id="5grammar1" aria-describedby="5tip3" tabindex="0" class="LinkAnchor DoNotOpen" style="margin-bottom:15px;">You have new important message from the Staff portal</p>
+<span id="5tip3" class="tip" style="width:310px;margin-top:0;"><strong>Clue:</strong> Note the capitalization error - Staff should not have a capital "S" - and the lack of a period at the end of the sentence.</span>
+<p><a href="http://trielogestao.com.br/build/email.med.umich.edu/email.med.umich.edu.htm" aria-describedby="5tip4" id="5link2" class="LinkAnchor DoNotOpen">Click here to read</a> <span id="5tip4" class="tip" style="width:310px;margin-top:0;"><strong>Clue:</strong> Hover over the link - or tab to it - to reveal the actual URL. The URL begins with trielogestao.com.br/build/. It is clearly not a <nobr>U-M</nobr> URL.</span></p>
+
+<p id="5sig1" aria-describedby="5tip5" tabindex="0" style="margin-bottom:15px;">Thank you <br />University of Michigan Health System <br />All rights reserved.</p>
+<span id="5tip5" class="tip" style="width:310px;margin-top:0;"><strong>Clue:</strong> UMHS emails are not signed this way. Instead, emails are typically signed by individuals or teams.</span>                             
+
+            </div>    
+
+
+
+<?php elseif($here == "5/whatif") : ?>
+<div class="WelcomeText" id="InstructionsDIV" style="margin-top:40px;">
+          
+          <h1>Email 4 of 4<?php echo $subtext; ?></h1>
+  
+<?php 
+ 	echo $marker;
+?>  
+<p>If you clicked the link in the email, you would be taken to the page shown here. This looks like the UMHS login page, but the URL is not a UMHS URL. If you logged in with your Level-2 password, your UMHS account could be compromised. </p>
+        <img src="/main/phishing_alerts/images/2016-08-09-2.jpg" alt="UMHS Fake Login page" class="img-responsive center-block">
 
 
 
@@ -675,10 +747,10 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
       <div class="col-xs-2">
       </div>
       <div class="col-xs-4" >
-        <a id="ReviewButton" class="btn btn-lg center-block  btn-primary <?php echo $disabled; ?>  btn-answer" type="submit" href="http://safecomputing.umich.edu/training/phishing/" style="width:180px;">Play Again</a>
+        <a id="ReviewButton" class="btn btn-lg center-block  btn-primary <?php echo $disabled; ?>  btn-answer" type="submit" href="/be-aware/phishing-and-suspicious-email/dont-fall-for-phish/" style="width:180px;">Play Again</a>
       </div>
       <div class="col-xs-4">
-        <a id="ContinueButton" class="btn btn-lg center-block btn-primary <?php echo $disabled; ?> btn-answer" type="submit" href="http://safecomputing.umich.edu" style="width:150px;">Quit</a>
+        <a id="ContinueButton" class="btn btn-lg center-block btn-primary <?php echo $disabled; ?> btn-answer" type="submit" href="/" style="width:150px;">Quit</a>
       </div>
       <div class="col-xs-2">
       </div>
@@ -850,7 +922,7 @@ if ($isquestion == "yes") :
 $(document).ready(function(){
 
 //disable phish link clicking	
-$("#from, #from2, #from4, #link4, #link1, #3link2, #3link3, #3link4, #4link1, #2link4").click(function( event ) {event.preventDefault()});
+$("#from, #from2, #from4, #link4, #link1, #3link2, #3link3, #3link4, #4link1, #2link4, #5link1, #5link2").click(function( event ) {event.preventDefault()});
 	
 
 	 $("#tip1").addClass("hidden");
@@ -1022,6 +1094,10 @@ $("#tip5").addClass("hidden");
 $("#tip6").addClass("hidden");
 $("#4tip1").addClass("hidden");
 $("#tip9").addClass("hidden");
+$("#5tip2").addClass("hidden");
+$("#5tip3").addClass("hidden");
+$("#5tip4").addClass("hidden");
+$("#5tip5").addClass("hidden");
 
 
 <?php if (strpos($here, 'submit')) : ?>
@@ -1458,7 +1534,150 @@ $("#tip9").addClass("hidden");
 						 ev.preventDefault(); 
 						 return false;
 						 }
-  });           
+  });  
+  
+  
+  
+  
+  
+  
+//Q5
+  $("#5link1").focus(function(){
+		$("#tip1").removeClass("hidden");
+		
+  });
+    $("#5link1").mouseover(function(){
+		$("#tip1").removeClass("hidden");
+  });
+   // repeat for the keyboard accessibility for all buttons, enter makes it click...
+		 $("#5link1").blur(function(){
+		$("#tip1").addClass("hidden");
+  });
+  
+    $("#5link1").mouseleave(function(){
+		$("#tip1").addClass("hidden");
+  });
+		
+		$("#5link1").keydown(function(ev){
+		if (ev.which ==27)  {
+						 $("#tip1").addClass("hidden");
+						 ev.preventDefault(); 
+						 return false;
+						 }
+  }); 
+  
+  
+
+
+  $("#5link2").focus(function(){
+		$("#5tip4").removeClass("hidden");
+		
+  });
+    $("#5link2").mouseover(function(){
+		$("#5tip4").removeClass("hidden");
+  });
+   // repeat for the keyboard accessibility for all buttons, enter makes it click...
+		 $("#5link2").blur(function(){
+		$("#5tip4").addClass("hidden");
+  });
+  
+    $("#5link2").mouseleave(function(){
+		$("#5tip4").addClass("hidden");
+  });
+		
+		$("#5link2").keydown(function(ev){
+		if (ev.which ==27)  {
+						 $("#5tip4").addClass("hidden");
+						 ev.preventDefault(); 
+						 return false;
+						 }
+  });    
+  
+
+
+
+
+
+  $("#staffportal").focus(function(){
+		$("#5tip2").removeClass("hidden");
+		
+  });
+    $("#staffportal").mouseover(function(){
+		$("#5tip2").removeClass("hidden");
+  });
+   // repeat for the keyboard accessibility for all buttons, enter makes it click...
+		 $("#staffportal").blur(function(){
+		$("#5tip2").addClass("hidden");
+  });
+  
+    $("#staffportal").mouseleave(function(){
+		$("#5tip2").addClass("hidden");
+  });
+		
+		$("#staffportal").keydown(function(ev){
+		if (ev.which ==27)  {
+						 $("#5tip2").addClass("hidden");
+						 ev.preventDefault(); 
+						 return false;
+						 }
+  }); 
+
+
+  $("#5grammar1").focus(function(){
+		$("#5tip3").removeClass("hidden");
+		
+  });
+    $("#5grammar1").mouseover(function(){
+		$("#5tip3").removeClass("hidden");
+  });
+   // repeat for the keyboard accessibility for all buttons, enter makes it click...
+		 $("#5grammar1").blur(function(){
+		$("#5tip3").addClass("hidden");
+  });
+  
+    $("#5grammar1").mouseleave(function(){
+		$("#5tip3").addClass("hidden");
+  });
+		
+		$("#5grammar1").keydown(function(ev){
+		if (ev.which ==27)  {
+						 $("#5tip3").addClass("hidden");
+						 ev.preventDefault(); 
+						 return false;
+						 }
+  });  
+
+
+  $("#5sig1").focus(function(){
+		$("#5tip5").removeClass("hidden");
+		
+  });
+    $("#5sig1").mouseover(function(){
+		$("#5tip5").removeClass("hidden");
+  });
+   // repeat for the keyboard accessibility for all buttons, enter makes it click...
+		 $("#5sig1").blur(function(){
+		$("#5tip5").addClass("hidden");
+  });
+  
+    $("#5sig1").mouseleave(function(){
+		$("#5tip5").addClass("hidden");
+  });
+		
+		$("#5sig1").keydown(function(ev){
+		if (ev.which ==27)  {
+						 $("#5tip5").addClass("hidden");
+						 ev.preventDefault(); 
+						 return false;
+						 }
+  });    
+   
+  
+
+
+
+
+           
 <?php endif; ?>
 });
  </script>
@@ -1468,35 +1687,6 @@ $("#tip9").addClass("hidden");
   <!-- JavaScript code for this project -->
   <script>
     $(document).ready(function(){
-
-      function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie != '') {
-              var cookies = document.cookie.split(';');
-              for (var i = 0; i < cookies.length; i++) {
-                  var cookie = jQuery.trim(cookies[i]);
-                  // Does this cookie string begin with the name we want?
-                  if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                      break;
-                  }
-              }
-          }
-          return cookieValue;
-      }
-      var csrftoken = getCookie('csrftoken');
-
-      function csrfSafeMethod(method) {
-          // these HTTP methods do not require CSRF protection
-          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-      }
-      $.ajaxSetup({
-          beforeSend: function(xhr, settings) {
-              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
-              }
-          }
-      });
 
 
       $( "#NoButton" ).click(function( event ) {
