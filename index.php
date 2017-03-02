@@ -218,7 +218,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/main/phishing_alerts/">
+          <a class="navbar-brand" href="/be-aware/phishing-and-suspicious-email/">
             <img src="resources/university-of-michigan-logo.png" alt="University of Michigan Logo" width="301px" height="46px" style="max-width:301px; margin-top: -13px;">
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -403,7 +403,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
  	echo $marker;
 ?>  
                   <p>If you clicked the link in the email, you would be taken to the web page shown here:</p>
-        <img src="http://safecomputing.umich.edu/main/phishing_alerts/images/2015-08-10-2.jpg" alt="Enter your U-M personal information." class="img-responsive center-block">
+        <img src="http://safecomputing.umich.edu/sites/default/files/2015-08-10-2.jpg" alt="Enter your U-M personal information." class="img-responsive center-block">
         <p>Any information you entered would be stolen and could be used to compromise your U-M account, access your emails, change your personal information in Wolverine Access, and more.</p>
 
 
@@ -474,7 +474,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
  	echo $marker;
 ?>  
 <p>If you clicked the link in the email, you would be taken to the web page shown here:</p>
-        <img src="http://safecomputing.umich.edu/main/phishing_alerts/images/2015-08-21.jpg" alt="Enter your U-M personal information." class="img-responsive center-block">
+        <img src="http://safecomputing.umich.edu/sites/default/files/2015-08-21.jpg" alt="Enter your U-M personal information." class="img-responsive center-block">
         <p>Any information you entered would be stolen and could be used to compromise your U-M account, access your emails, change your personal information in Wolverine Access, and more.</p>
 
 
@@ -636,7 +636,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
  	echo $marker;
 ?>  
 <p>If you clicked the link in the email, you would be taken to the page shown here. If you logged in, your password would be stolen, and your U-M account could be compromised.</p>
-        <img src="/main/phishing_alerts/images/2016-03-30-1.jpg" alt="Enter your email and password." class="img-responsive center-block">
+        <img src="/sites/default/files/2016-03-30-1.jpg" alt="Enter your email and password." class="img-responsive center-block">
         
         
         
@@ -707,7 +707,7 @@ if (strpos($here, 'submit') && !$_GET['rev']) {
  	echo $marker;
 ?>  
 <p>If you clicked the link in the email, you would be taken to the page shown here. This looks like the UMHS login page, but the URL is not a UMHS URL. If you logged in with your Level-2 password, your UMHS account could be compromised. </p>
-        <img src="/main/phishing_alerts/images/2016-08-09-2.jpg" alt="UMHS Fake Login page" class="img-responsive center-block">
+        <img src="/sites/default/files/2016-08-09-2.jpg" alt="UMHS Fake Login page" class="img-responsive center-block">
 
 
 
